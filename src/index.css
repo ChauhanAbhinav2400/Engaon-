@@ -1,0 +1,215 @@
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-hand: 'Kalam', 'Caveat', cursive;
+
+  /* Colors matching screenshot */
+  --color-forest-dark: #132e20;
+  --color-forest: #1b3b2b;
+  --color-forest-mid: #25533d;
+  --color-forest-light: #347a54;
+  --color-forest-subtle: #edf5ef;
+  
+  --color-primary-green: #1e7c47;
+  --color-primary-green-hover: #166337;
+  
+  --color-brown-btn: #573216;
+  --color-brown-btn-hover: #3f220c;
+  
+  --color-gold: #c98020;
+  --color-gold-dark: #8c5310;
+  --color-gold-light: #faecd6;
+
+  --color-bg-light: #ffffff;
+  --color-bg-cream: #fbf8f1;
+  --color-bg-ribbon: #fcf9f3;
+  --color-bg-kraft: #eddac4;
+  
+  --color-border-light: #eee7db;
+  --color-border-strong: #dfd3c0;
+
+  --color-text-dark: #1c241f;
+  --color-text-muted: #58635c;
+  --color-text-subtle: #7f8a84;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  --max-width: 1200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Typography utilities */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-whatsapp {
+  background-color: var(--color-primary-green);
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(30, 124, 71, 0.25);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-primary-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(30, 124, 71, 0.35);
+}
+
+.btn-brown {
+  background-color: var(--color-brown-btn);
+  color: #ffffff;
+}
+
+.btn-brown:hover {
+  background-color: var(--color-brown-btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(87, 50, 22, 0.3);
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-border-strong);
+  font-size: 13px;
+  padding: 6px 16px;
+}
+
+.btn-outline:hover {
+  background-color: #f7f4ed;
+  border-color: #c9bcab;
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: var(--color-forest-dark);
+  font-weight: 600;
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.btn-white:hover {
+  background-color: #f3f9f4;
+  transform: translateY(-1px);
+}
+
+/* Section Header Styles matching screenshot */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.section-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-forest-dark);
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 640px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* Kraft card styled text badge */
+.kraft-tag {
+  background: #ecd8bf url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  border: 1px dashed #bba387;
+  box-shadow: 2px 4px 10px rgba(78, 55, 33, 0.15);
+  position: relative;
+}
