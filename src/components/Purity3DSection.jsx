@@ -282,13 +282,12 @@ export default function Purity3DSection() {
 
     // -------------------------------------------------------------
     // ANIMATION & DIGESTION LOOP
-    // -------------------------------------------------------------
     let animId;
-    const clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
-      const time = clock.getElapsedTime();
+      const time = (performance.now() - startTime) * 0.001;
       const currentSubstance = substanceStateRef.current;
       const isSugar = currentSubstance === 'sugar';
 
