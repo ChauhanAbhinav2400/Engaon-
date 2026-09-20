@@ -10,6 +10,7 @@ export default function Navbar({ onOpenOrderModal }) {
     { label: 'Our Products', href: '#products' },
     { label: 'Our Process', href: '#process' },
     { label: 'Our Story', href: '#story' },
+    { label: 'Purity & Health', href: '#purity' },
     { label: 'How to Order', href: '#how-to-order' },
     { label: 'Recipes', href: '#recipes' },
     { label: 'Contact', href: '#contact' },

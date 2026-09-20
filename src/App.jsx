@@ -5,6 +5,7 @@ import ValueRibbon from './components/ValueRibbon';
 import ProductsSection from './components/ProductsSection';
 import ProcessSection from './components/ProcessSection';
 import StorySection from './components/StorySection';
+import Purity3DSection from './components/Purity3DSection';
 import OrderAndWhySection from './components/OrderAndWhySection';
 import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
@@ -44,6 +45,9 @@ export default function App() {
 
         {/* Story Section */}
         <StorySection />
+
+        {/* Interactive 3D Anatomy of Purity & Body Health Section */}
+        <Purity3DSection />
 
         {/* How to Order & Why Choose Engaon */}
         <OrderAndWhySection
