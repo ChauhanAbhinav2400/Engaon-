@@ -1,32 +1,33 @@
-import React from 'react';
-import { SectionLeaf } from './Icons';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { SectionLeaf } from "./Icons";
+import { ArrowRight } from "lucide-react";
 
 export default function ProductsSection({ onSelectProduct }) {
   const products = [
     {
-      id: 'traditional-gud',
-      title: 'Traditional Jaggery (Gud)',
-      description: 'Rich taste, natural sweetness and full of traditional goodness.',
-      price: '₹100 per kg',
-      image: '/images/product_gud.jpg',
-      alt: 'Traditional Indian Jaggery blocks Gud',
+      id: "traditional-gud",
+      title: "Traditional Jaggery (Gud)",
+      description:
+        "Rich taste, natural sweetness and full of traditional goodness.",
+      price: "₹100 per kg",
+      image: "/Engaon-/images/product_gud.jpg",
+      alt: "Traditional Indian Jaggery blocks Gud",
     },
     {
-      id: 'gud-shakkar',
-      title: 'Jaggery Powder (Gud Shakkar)',
-      description: 'Easy to use. Perfect for daily cooking and beverages.',
-      price: '₹100 per kg',
-      image: '/images/product_powder.jpg',
-      alt: 'Fine organic Jaggery Powder Gud Shakkar',
+      id: "gud-shakkar",
+      title: "Jaggery Powder (Gud Shakkar)",
+      description: "Easy to use. Perfect for daily cooking and beverages.",
+      price: "₹100 per kg",
+      image: "/Engaon-/images/product_powder.jpg",
+      alt: "Fine organic Jaggery Powder Gud Shakkar",
     },
     {
-      id: 'jaggery-cubes',
-      title: 'Jaggery Cubes',
-      description: 'Convenient, natural and delicious.',
-      price: '₹100 per kg',
-      image: '/images/product_cubes.jpg',
-      alt: 'Natural pure Jaggery Cubes in rustic bowl',
+      id: "jaggery-cubes",
+      title: "Jaggery Cubes",
+      description: "Convenient, natural and delicious.",
+      price: "₹100 per kg",
+      image: "/Engaon-/images/product_cubes.jpg",
+      alt: "Natural pure Jaggery Cubes in rustic bowl",
     },
   ];
 
@@ -43,7 +44,9 @@ export default function ProductsSection({ onSelectProduct }) {
             <p className="section-subtitle">Simple. Natural. Wholesome.</p>
           </div>
           <button
-            onClick={() => onSelectProduct ? onSelectProduct(products[0]) : null}
+            onClick={() =>
+              onSelectProduct ? onSelectProduct(products[0]) : null
+            }
             className="btn btn-outline"
           >
             <span>View All Products</span>
@@ -68,7 +71,14 @@ export default function ProductsSection({ onSelectProduct }) {
                 <p className="product-desc">{product.description}</p>
                 <div className="product-price">{product.price}</div>
                 <button
-                  onClick={() => onSelectProduct ? onSelectProduct(product) : window.open(`https://wa.me/919876543210?text=Hello%20Engaon,%20I%20would%20like%20to%20order%20${encodeURIComponent(product.title)}`, '_blank')}
+                  onClick={() =>
+                    onSelectProduct
+                      ? onSelectProduct(product)
+                      : window.open(
+                          `https://wa.me/919876543210?text=Hello%20Engaon,%20I%20would%20like%20to%20order%20${encodeURIComponent(product.title)}`,
+                          "_blank",
+                        )
+                  }
                   className="btn btn-whatsapp product-cta"
                 >
                   Order Now
