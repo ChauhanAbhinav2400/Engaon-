@@ -9,10 +9,16 @@ export default function OrderModal({ isOpen, onClose, initialProduct = null }) {
     { id: 'cubes', name: 'Jaggery Cubes', price: 100 },
   ];
 
+  const LOCATION_PHONE_MAP = {
+    'Delhi/NCR': '918800161404',
+    'Dehradun': '919568385635',
+    'Dhampur': '918800161404',
+  };
+
   const [selectedProduct, setSelectedProduct] = useState(products[0].id);
   const [quantity, setQuantity] = useState(2);
   const [customerName, setCustomerName] = useState('');
-  const [city, setCity] = useState('');
+  const [location, setLocation] = useState('Delhi/NCR');
 
   useEffect(() => {
     if (initialProduct) {
@@ -29,13 +35,13 @@ export default function OrderModal({ isOpen, onClose, initialProduct = null }) {
 
   const handleWhatsAppSend = (e) => {
     e.preventDefault();
-    const phone = '919876543210';
+    const phone = LOCATION_PHONE_MAP[location] || '918800161404';
     const message = `*New Order Inquiry - Engaon™*\n\n` +
       `*Product:* ${currentProd.name}\n` +
       `*Quantity:* ${quantity} kg\n` +
       `*Estimated Price:* ₹${totalPrice}\n` +
-      (customerName ? `*Name:* ${customerName}\n` : '') +
-      (city ? `*Delivery City:* ${city}\n` : '') +
+      (customerName.trim() ? `*Name:* ${customerName.trim()}\n` : '') +
+      `*Location:* ${location}\n` +
       `\nPlease share payment and delivery details.`;
 
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
@@ -108,11 +114,12 @@ export default function OrderModal({ isOpen, onClose, initialProduct = null }) {
             </div>
           </div>
 
-          {/* Name & City */}
+          {/* Name & Location */}
           <div className="form-row">
             <div className="form-group half">
-              <label className="form-label">Your Name (optional):</label>
+              <label htmlFor="order-customer-name" className="form-label">Your Name (optional):</label>
               <input
+                id="order-customer-name"
                 type="text"
                 className="form-input"
                 placeholder="e.g. Rohit Sharma"
@@ -121,14 +128,18 @@ export default function OrderModal({ isOpen, onClose, initialProduct = null }) {
               />
             </div>
             <div className="form-group half">
-              <label className="form-label">Delivery City (optional):</label>
-              <input
-                type="text"
-                className="form-input"
-                placeholder="e.g. Noida / Delhi"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-              />
+              <label htmlFor="order-location" className="form-label">Location:</label>
+              <select
+                id="order-location"
+                className="form-input form-select"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                required
+              >
+                <option value="Delhi/NCR">Delhi/NCR</option>
+                <option value="Dehradun">Dehradun</option>
+                <option value="Dhampur">Dhampur</option>
+              </select>
             </div>
           </div>
 
@@ -142,6 +153,9 @@ export default function OrderModal({ isOpen, onClose, initialProduct = null }) {
               <span>Total Amount:</span>
               <strong className="total-amount">₹{totalPrice}</strong>
             </div>
+            <p className="delivery-charge-note">
+              Delivery charges are not included in the total. Delivery charges will be calculated separately after confirming your location with you on WhatsApp.
+            </p>
           </div>
 
           {/* Action button */}

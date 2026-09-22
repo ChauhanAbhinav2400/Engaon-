@@ -28,7 +28,10 @@ export default function App() {
   return (
     <div className="engaon-app">
       {/* Navigation Bar */}
-      <Navbar onOpenOrderModal={() => handleOpenOrder(null)} />
+      <Navbar
+        onOpenOrderModal={() => handleOpenOrder(null)}
+        onOpenRecipeModal={() => setRecipeModalOpen(true)}
+      />
 
       <main>
         {/* Hero Section */}
@@ -60,7 +63,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenRecipeModal={() => setRecipeModalOpen(true)} />
 
       {/* Interactive Modals */}
       <OrderModal

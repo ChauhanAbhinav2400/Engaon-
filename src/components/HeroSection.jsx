@@ -50,9 +50,9 @@ export default function HeroSection({ onOpenOrderModal }) {
                 onOpenOrderModal
                   ? onOpenOrderModal()
                   : window.open(
-                      "https://wa.me/919876543210?text=Hello%20Engaon,%20I%20want%20to%20order%20pure%20Dhampur%20jaggery.",
-                      "_blank",
-                    )
+                    "https://wa.me/919876543210?text=Hello%20Engaon,%20I%20want%20to%20order%20pure%20Dhampur%20jaggery.",
+                    "_blank",
+                  )
               }
               className="btn btn-whatsapp"
             >
@@ -73,7 +73,7 @@ export default function HeroSection({ onOpenOrderModal }) {
           {/* Main Hero Image */}
           <div className="hero-image-frame">
             <img
-              src="/Engaon-/images/hero.jpg"
+              src="/images/hero.jpg"
               alt="Natural Jaggery blocks with fresh sugarcane from Dhampur"
               className="hero-main-img"
               loading="eager"

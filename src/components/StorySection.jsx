@@ -10,7 +10,7 @@ export default function StorySection() {
           <div className="story-left-visual">
             <div className="story-image-container">
               <img
-                src="/Engaon-/images/story_farm.jpg"
+                src="/images/story_farm.jpg"
                 alt="Dhampur sugarcane fields"
                 className="story-farm-img"
               />

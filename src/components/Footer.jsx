@@ -2,14 +2,18 @@ import React from 'react';
 import { LeafSprout, InstagramIcon, FacebookIcon, YoutubeIcon } from './Icons';
 import { ChevronUp } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ onOpenRecipeModal }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleScrollTo = (e, href) => {
+  const handleLinkClick = (e, link) => {
     e.preventDefault();
-    const element = document.querySelector(href);
+    if (link.label === 'Recipes' || link.href === '#recipes') {
+      if (onOpenRecipeModal) onOpenRecipeModal();
+      return;
+    }
+    const element = document.querySelector(link.href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -49,7 +53,7 @@ export default function Footer() {
                 <a
                   href={link.href}
                   className="footer-link"
-                  onClick={(e) => handleScrollTo(e, link.href)}
+                  onClick={(e) => handleLinkClick(e, link)}
                 >
                   {link.label}
                 </a>
@@ -108,7 +112,7 @@ export default function Footer() {
 
         {/* Bottom Footer Row */}
         <div className="footer-bottom-row">
-          <p className="footer-copy">© 2024 Engaon. All rights reserved.</p>
+          <p className="footer-copy">© 2026 Engaon. All rights reserved.</p>
           <p className="footer-credit">Made with <span className="heart-icon">❤️</span> for a healthier, sweeter India.</p>
         </div>
 

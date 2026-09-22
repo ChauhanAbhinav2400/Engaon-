@@ -106,9 +106,9 @@ export default function OrderAndWhySection({
                   onOpenOrderModal
                     ? onOpenOrderModal()
                     : window.open(
-                        "https://wa.me/919876543210?text=Hello%20Engaon,%20I%20want%20to%20place%20an%20order.",
-                        "_blank",
-                      )
+                      "https://wa.me/919876543210?text=Hello%20Engaon,%20I%20want%20to%20place%20an%20order.",
+                      "_blank",
+                    )
                 }
                 className="btn btn-whatsapp full-width-mobile"
               >
@@ -141,7 +141,7 @@ export default function OrderAndWhySection({
             <div id="recipes" className="recipes-banner">
               <div className="recipes-banner-img-wrap">
                 <img
-                  src="/Engaon-/images/recipe_dish.jpg"
+                  src="/images/recipe_dish.jpg"
                   alt="Traditional gud dessert dish"
                   className="recipes-banner-img"
                 />

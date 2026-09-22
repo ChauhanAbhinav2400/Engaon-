@@ -477,7 +477,7 @@ export default function Purity3DSection() {
   return (
     <section id="purity" className="purity-3d-section">
       <div className="container">
-        
+
         {/* Section Header */}
         <div className="section-header center-header">
           <div className="section-title-wrap center-text">
@@ -497,7 +497,7 @@ export default function Purity3DSection() {
 
         {/* Master 3D Comparison Dashboard */}
         <div className="organ-sim-dashboard">
-          
+
           {/* Top Substance Selector Banner */}
           <div className="substance-toggle-bar">
             <button
@@ -533,10 +533,10 @@ export default function Purity3DSection() {
 
           {/* 3D Simulation & Organ Diagnostic Split View */}
           <div className="sim-main-grid">
-            
+
             {/* 3D Human Body Canvas Container */}
             <div className={`canvas-3d-container ${substance === 'sugar' ? 'canvas-sugar-alert' : 'canvas-jaggery-heal'}`}>
-              
+
               {/* Overlay Interactive Controls */}
               <div className="canvas-header-controls">
                 <div className="sim-status-chip">
@@ -590,7 +590,7 @@ export default function Purity3DSection() {
 
             {/* Right Side: Real-Time Cellular Diagnostic Panel */}
             <div className="diagnostic-panel">
-              
+
               {/* Panel Header */}
               <div className="diag-header">
                 <div className="diag-title-wrap">

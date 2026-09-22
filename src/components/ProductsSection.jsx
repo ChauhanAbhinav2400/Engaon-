@@ -10,7 +10,7 @@ export default function ProductsSection({ onSelectProduct }) {
       description:
         "Rich taste, natural sweetness and full of traditional goodness.",
       price: "₹100 per kg",
-      image: "/Engaon-/images/product_gud.jpg",
+      image: "/images/product_gud.jpg",
       alt: "Traditional Indian Jaggery blocks Gud",
     },
     {
@@ -18,7 +18,7 @@ export default function ProductsSection({ onSelectProduct }) {
       title: "Jaggery Powder (Gud Shakkar)",
       description: "Easy to use. Perfect for daily cooking and beverages.",
       price: "₹100 per kg",
-      image: "/Engaon-/images/product_powder.jpg",
+      image: "/images/product_powder.jpg",
       alt: "Fine organic Jaggery Powder Gud Shakkar",
     },
     {
@@ -26,7 +26,7 @@ export default function ProductsSection({ onSelectProduct }) {
       title: "Jaggery Cubes",
       description: "Convenient, natural and delicious.",
       price: "₹100 per kg",
-      image: "/Engaon-/images/product_cubes.jpg",
+      image: "/images/product_cubes.jpg",
       alt: "Natural pure Jaggery Cubes in rustic bowl",
     },
   ];
@@ -75,9 +75,9 @@ export default function ProductsSection({ onSelectProduct }) {
                     onSelectProduct
                       ? onSelectProduct(product)
                       : window.open(
-                          `https://wa.me/919876543210?text=Hello%20Engaon,%20I%20would%20like%20to%20order%20${encodeURIComponent(product.title)}`,
-                          "_blank",
-                        )
+                        `https://wa.me/919876543210?text=Hello%20Engaon,%20I%20would%20like%20to%20order%20${encodeURIComponent(product.title)}`,
+                        "_blank",
+                      )
                   }
                   className="btn btn-whatsapp product-cta"
                 >

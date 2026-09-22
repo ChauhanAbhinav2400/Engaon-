@@ -9,7 +9,7 @@ export default function ProcessSection({ onOpenProcessModal }) {
       title: "Fresh Sugarcane Selection",
       description:
         "We source quality sugarcane from farms in and around Dhampur.",
-      image: "/Engaon-/images/step1_sugarcane.jpg",
+      image: "/images/step1_sugarcane.jpg",
       alt: "Sugarcane selection from farms",
       position: "center",
     },
@@ -17,7 +17,7 @@ export default function ProcessSection({ onOpenProcessModal }) {
       num: "2",
       title: "Juice Extraction",
       description: "Sugarcane is crushed to extract fresh juice.",
-      image: "/Engaon-/images/step2_crushing.jpg",
+      image: "/images/step2_crushing.jpg",
       alt: "Fresh sugarcane juice extraction with crusher",
       position: "center",
     },
@@ -26,7 +26,7 @@ export default function ProcessSection({ onOpenProcessModal }) {
       title: "Filtration & Boiling",
       description:
         "The juice is filtered and slowly boiled using traditional methods.",
-      image: "/Engaon-/images/step3_boiling.jpg",
+      image: "/images/step3_boiling.jpg",
       alt: "Traditional boiling in large kadai",
       position: "center",
     },
@@ -35,7 +35,7 @@ export default function ProcessSection({ onOpenProcessModal }) {
       title: "Thickening",
       description:
         "The juice is cooked to the right consistency with care and experience.",
-      image: "/Engaon-/images/step4_thickening.jpg",
+      image: "/images/step4_thickening.jpg",
       alt: "Cooking and thickening jaggery syrup",
       position: "center 40%",
     },
@@ -43,7 +43,7 @@ export default function ProcessSection({ onOpenProcessModal }) {
       num: "5",
       title: "Cooling & Setting",
       description: "The concentrated jaggery is cooled and set into blocks.",
-      image: "/Engaon-/images/step5_setting.jpg",
+      image: "/images/step5_setting.jpg",
       alt: "Cooling and setting into jaggery blocks in traditional molds",
       position: "center 75%",
     },
@@ -52,7 +52,7 @@ export default function ProcessSection({ onOpenProcessModal }) {
       title: "Packed with Care",
       description:
         "We pack the jaggery hygienically so it reaches your home fresh.",
-      image: "/Engaon-/images/step6_packing.jpg",
+      image: "/images/step6_packing.jpg",
       alt: "Hygienically packed jaggery in kraft paper pouches",
       position: "center 20%",
     },

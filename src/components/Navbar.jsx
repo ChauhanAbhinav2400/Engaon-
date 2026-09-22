@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LeafSprout, WhatsAppIcon } from './Icons';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar({ onOpenOrderModal }) {
+export default function Navbar({ onOpenOrderModal, onOpenRecipeModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -16,10 +16,14 @@ export default function Navbar({ onOpenOrderModal }) {
     { label: 'Contact', href: '#contact' },
   ];
 
-  const handleScrollTo = (e, href) => {
+  const handleLinkClick = (e, link) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
+    if (link.label === 'Recipes' || link.href === '#recipes') {
+      if (onOpenRecipeModal) onOpenRecipeModal();
+      return;
+    }
+    const element = document.querySelector(link.href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -29,7 +33,16 @@ export default function Navbar({ onOpenOrderModal }) {
     <header className="navbar-wrapper">
       <div className="container nav-container">
         {/* Brand Logo */}
-        <a href="#home" className="brand-logo" onClick={(e) => handleScrollTo(e, '#home')}>
+        <a
+          href="#home"
+          className="brand-logo"
+          onClick={(e) => {
+            e.preventDefault();
+            setMobileMenuOpen(false);
+            const el = document.querySelector('#home');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           <div className="logo-main">
             <span className="logo-text font-serif">Engaon</span>
             <span className="logo-tm">™</span>
@@ -47,7 +60,7 @@ export default function Navbar({ onOpenOrderModal }) {
               key={link.label}
               href={link.href}
               className={`nav-link ${link.active ? 'nav-link-active' : ''}`}
-              onClick={(e) => handleScrollTo(e, link.href)}
+              onClick={(e) => handleLinkClick(e, link)}
             >
               {link.label}
             </a>
@@ -85,7 +98,7 @@ export default function Navbar({ onOpenOrderModal }) {
                 key={link.label}
                 href={link.href}
                 className="mobile-nav-link"
-                onClick={(e) => handleScrollTo(e, link.href)}
+                onClick={(e) => handleLinkClick(e, link)}
               >
                 {link.label}
               </a>
